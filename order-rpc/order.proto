@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package order;
+option go_package = "./order";
+
+message OrderInfoReq {
+  string id = 1;
+}
+
+message OrderInfoResp {
+  string id = 1;
+  string product = 2;
+  int32 amount = 3;
+}
+
+service Order {
+  rpc getOrderInfo(OrderInfoReq) returns (OrderInfoResp);
+}

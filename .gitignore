@@ -1,0 +1,21 @@
+.DS_Store
+
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+order-rpc/order-rpc
+user-api/user-api
+user-rpc/user-rpc
+
+# Test binary
+*.test
+
+# Coverage
+*.out
+
+# IDE
+.idea/
+.vscode/

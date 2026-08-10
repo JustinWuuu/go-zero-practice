@@ -1,0 +1,36 @@
+type (
+	UserInfoReq {
+		Id string `path:"id"`
+	}
+	UserInfoResp {
+		Id   string `json:"id"`
+		Name string `json:"name"`
+	}
+	CreateUserReq {
+		Name string `json:"name"`
+	}
+	CreateUserResp {
+		Id   string `json:"id"`
+		Name string `json:"name"`
+	}
+	OrderInfoReq {
+		Id string `path:"id"`
+	}
+	OrderInfoResp {
+		Id      string `json:"id"`
+		Product string `json:"product"`
+		Amount  int32  `json:"amount"`
+	}
+)
+
+service user-api {
+	@handler UserInfoHandler
+	get /user/:id (UserInfoReq) returns (UserInfoResp)
+
+	@handler CreateUserHandler
+	post /user (CreateUserReq) returns (CreateUserResp)
+
+	@handler OrderInfoHandler
+	get /order/:id (OrderInfoReq) returns (OrderInfoResp)
+}
+
